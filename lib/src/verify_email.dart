@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:email_auth/email_auth.dart';
 import 'package:email_verify/src/home.dart';
+import 'package:email_verify/src/login.dart';
 import 'package:email_verify/src/widget/warning.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -90,6 +91,10 @@ class _EmailVerificationState extends State<EmailVerification> {
                   TextButton(
                       onPressed: () {
                         firebaseAuth.signOut();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()));
                         // sendOtp();
                       },
                       child: Text("Log Out")),
